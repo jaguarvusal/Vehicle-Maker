@@ -26,7 +26,7 @@ an existing TypeScript command-line application that builds and uses cars to inc
 
   ## Contribution
 
-  share with peers to make this readme generator even better!
+  share with peers to make this vehicle maker even better!
 
   ## Tests
 
