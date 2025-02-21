@@ -179,6 +179,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
+          answers.wheels,
           parseInt(answers.towingCapacity)
         );
         // push the truck to the vehicles array
@@ -254,8 +255,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          new Wheel(parseInt(answers.frontWheelDiameter), answers.frontWheelBrand),
-          new Wheel(parseInt(answers.rearWheelDiameter), answers.rearWheelBrand)
+          answers.wheels,
         );
         // push the motorbike to the vehicles array
         this.vehicles.push(motorbike);
@@ -392,7 +392,7 @@ class Cli {
           // perform the wheelie action only if the selected vehicle is a motorbike
           const selectedVehicle = this.vehicles.find(vehicle => vehicle.vin === this.selectedVehicleVin);
           if (selectedVehicle && selectedVehicle instanceof Motorbike) {
-            selectedVehicle.wheelie();
+            selectedVehicle.wheelie(selectedVehicle);
           } else {
             console.log("Only motorbikes can perform a wheelie.");
           }
